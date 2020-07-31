@@ -20,7 +20,7 @@ export class SpotifyService {
 
     const headers = new HttpHeaders({
       //Bearer: Expires each hour, we have to request a new post for each expirtation
-      'Authorization': 'Bearer BQCb6YcMYhiv1RK_iSGezWZcKV3iiCMu-Si5uWFTkbJkUwfQX1FlQwx3dG2UCnN2btJz6PTNd4BFnb14nXU'
+      'Authorization': 'Bearer BQCCETya3_LtT-UFHWWjwoPUoikXnKs7lkCvK2NQ9e51OlIGh70Xm3yGF9ukFClugJMzl0DuFaCpPsJfdKk'
     });
 
     return this.http.get(url, { headers });
