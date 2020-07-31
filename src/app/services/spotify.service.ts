@@ -15,13 +15,10 @@ export class SpotifyService {
 
     const headers = new HttpHeaders({
       //Bearer: Expira cada hora, se tiene que cambiar la authorización
-      'Authorization': 'Bearer BQC4hWd8k75CEHjJ-up6FON5r97K8Pol-dxq_Evho84e1a9rPhekOvpuwkA4NqH2hxxdvlKiJzTCfj1MnV4'
+      'Authorization': 'Bearer BQBT3cg_IViLKW8I9WBGCapH85IJqOueWtLBwQct2TxaW36UBnOaE_ne6t8_SAs45Doi3jqunXs5JemFEqw'
     });
 
-    this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers })
-      .subscribe(data => {
-        console.log(data);
-      });
-  }
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });
 
+  }
 }
