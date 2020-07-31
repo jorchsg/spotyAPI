@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+//Importando Reactive Extensions: maps, filter, etc.
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,22 +17,28 @@ export class SpotifyService {
   getNewReleases() {
 
     const headers = new HttpHeaders({
-      //Bearer: Expira cada hora, se tiene que cambiar la authorización
-      'Authorization': 'Bearer BQAz2KGXl5vMvQduugJhh3WAG81ZjJjLBj8oIo4tTYUCLsj8T-b-xwQb-xy5V4-NNBvEYYgQQ11Jc2iNEvA'
+      //Bearer: Expires each hour, we have to request a new post for each expirtation
+      'Authorization': 'Bearer BQCb6YcMYhiv1RK_iSGezWZcKV3iiCMu-Si5uWFTkbJkUwfQX1FlQwx3dG2UCnN2btJz6PTNd4BFnb14nXU'
     });
 
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers })
+      .pipe(map(data => {
+        return data['albums'].items; //Way to get the data more directly using "pipe" and "map" instance "subscribe"
+      }));
 
   }
 
   getArtist(termino: string) {
 
     const headers = new HttpHeaders({
-      //Bearer: Expira cada hora, se tiene que cambiar la authorización
-      'Authorization': 'Bearer BQAz2KGXl5vMvQduugJhh3WAG81ZjJjLBj8oIo4tTYUCLsj8T-b-xwQb-xy5V4-NNBvEYYgQQ11Jc2iNEvA'
+      //Bearer: Expires each hour, we have to request a new post for each expirtation
+      'Authorization': 'Bearer BQCb6YcMYhiv1RK_iSGezWZcKV3iiCMu-Si5uWFTkbJkUwfQX1FlQwx3dG2UCnN2btJz6PTNd4BFnb14nXU'
     });
 
-    return this.http.get(`https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`, { headers });
+    return this.http.get(`https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`, { headers })
+      .pipe(map(data => {
+        return data['artists'].items;//Way to get the data more directly using "pipe" and "map" instance "subscribe"
+      }));
 
   }
 }
