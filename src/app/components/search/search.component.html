@@ -4,4 +4,6 @@
     </div>
 </div>
 
-<app-cards [items]="artists"></app-cards>
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
+<app-cards *ngIf="!loading" [items]="artists"></app-cards>
