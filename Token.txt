@@ -1,0 +1,23 @@
+POST: Spotify TOKEN:
+https://accounts.spotify.com/api/token
+
+Body:
+
+grant_type
+client_credentials
+
+client_id
+69a0fc2639a343489a0a396b6454e2eb
+
+client_secret
+053631098bf449109aa82c26581bc30d
+
+-------------------------------------------------------------------------------
+Get Autorizathion
+https://api.spotify.com/v1/browse/new-releases
+
+Headers:
+
+Authorization:
+Bearer BQCCETya3_LtT-UFHWWjwoPUoikXnKs7lkCvK2NQ9e51OlIGh70Xm3yGF9ukFClugJMzl0DuFaCpPsJfdKk
+
