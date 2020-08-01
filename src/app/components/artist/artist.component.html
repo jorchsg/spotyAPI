@@ -7,21 +7,21 @@
     <div class="col">
         <h3>{{artist.name}}</h3>
         <p>
-            <a [href]="artist.external_urls.spotify" target="_blank">
-                Go to artist page
-            </a>
+            <a [href]="artist.external_urls.spotify" target="_blank" class="badge badge-success p-2"> Go to artist
+                page</a>
         </p>
 
     </div>
     <div class="col-4 text-right">
-        <button routerLink="/search" class="btn btn-outline-danger">Back</button>
+        <button routerLink="/search" class="btn btn-danger btn-lg">Back</button>
     </div>
 </div>
 
 <div class="row m-5">
     <div class="col">
+        <h1>Top Tracks</h1>
         <table class="table">
-            <tr>
+            <tr class="text-center m-2">
                 <th>Photo</th>
                 <th>Album</th>
                 <th>Song</th>

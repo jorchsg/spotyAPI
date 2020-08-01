@@ -20,14 +20,14 @@ export class SpotifyService {
 
     const headers = new HttpHeaders({
       //Bearer: Expires each hour, we have to request a new post for each expirtation
-      'Authorization': 'Bearer BQAfEK1RRyS8I93Qj2SbNyUQu3CVAEDQ3uQQRxKlsqVBV731dhN_R5BS6KVGZaPVEy7LCC7T0qFLTfkjOvMd'
+      'Authorization': 'Bearer BQABQ3KVN2SrzQw83IU90lmlJ6GSXSrwlnrs6J1iBgAZ8zxYbyBrzfxWZyJI8cuuqXoVgs2ONRYs73xXFbU'
     });
 
     return this.http.get(url, { headers });
   }
 
   getNewReleases() {
-    return this.getQuery('browse/new-releases?limit=20')
+    return this.getQuery('browse/new-releases?limit=40')
       .pipe(map(data => {
         return data['albums'].items; //Way to get the data more directly using "pipe" and "map" instance "subscribe"
       }));
