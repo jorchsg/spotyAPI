@@ -70,3 +70,16 @@ hr {
 .fadeIn {
   animation-name: fadeIn;
 }
+
+/* Artists */
+td {
+  border-color: white;
+  background-color: black;
+  color: white !important;
+}
+
+th {
+  border-color: blue;
+  background-color: black;
+  color: white !important;
+}
