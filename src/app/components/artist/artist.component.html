@@ -35,8 +35,8 @@
                     <td>{{track.album.name}}</td>
                     <td>{{track.name}}</td>
                     <td>
-                        <audio *ngIf="track.preview_url" [src]="track.preview_url" controls></audio>
-                        <span *ngIf="!track.preview_url" class="badge badge-default">No Preview Available</span>
+                        <iframe [src]="track.id | domseguro:'https://open.spotify.com/embed/track/'" width="300"
+                            height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>
